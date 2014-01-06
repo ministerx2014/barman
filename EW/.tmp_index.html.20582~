@@ -2,10 +2,9 @@
 <html>
     <head>
     	   <title></title>
-		   <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
-		   <script type="text/javascript" src="js/plugin/jquery-ui-1.9.2.custom.min.js"></script>
+		   <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
 		   <script type="text/javascript" src="js/default.js"></script>
-</head>
+    </head>
     <body>
            <!--START HEADER-->
             <div id="headerContainer">
@@ -14,17 +13,15 @@
             <!--END HEADER-->
 			<!--START BODY-->
 		   <div id="bodyContainer">
-		   	    <button id="newSlideBtn" onclick="ewActivityManager.slideManager.renderNewSlideToUI()">Add New Slide</button>  
+		   	    <button id="newSlideBtn">Add New Slide</button>  
 				<div class="mainContent clearAfter">
                	    <div id="slideContainer">
-               	    	<ul id="sortable"></ul>
+               	    	
                	    </div>
 					<div id="activityContainer"></div>
 				</div>
            </div>
 		   <!--END BODY-->
     </body>
-	<link rel="stylesheet" type="text/css" href="css/plugin/jquery-ui/jquery-ui-1.9.2.custom.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/default.css" />
-	
 </html> 

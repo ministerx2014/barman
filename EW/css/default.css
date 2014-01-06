@@ -1,0 +1,20 @@
+html{}
+body{}
+
+.clearAfter:after{float:none;clear:both;content:"";display:table;}
+
+#headerContainer{border-bottom:solid 1px blue;width:100%;height:150px;margin:0 0 20px;}
+#bodyContainer{width:100%;margin:0 auto;border:solid 1px red;}
+#slideContainer{border:solid 1px black;width:20%;min-height:450px;float:left;}
+#activityContainer{border:solid 1px red;width:79%;min-height:450px;float:left;}
+#newSlideBtn{background-}
+.slideItem{border:solid 1px green;width:100px;height:150px;}
+
+
+@media screen and (min-width: 1600px) and (max-width: 1800px) {
+        
+}
+
+@media screen and (min-width: 1180px) and (max-width: 1400px) {
+	
+}
