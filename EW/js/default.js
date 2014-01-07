@@ -14,8 +14,9 @@ ewActivityManager = {
 
 
 ewActivityManager.slideManager = {
-    jsonObj: [],
+    jsonObj: {},
     itemIndex: 0,
+    counter: 0,
     
     init: function(obj) {
         this.slideId = obj.slideId;
@@ -24,43 +25,56 @@ ewActivityManager.slideManager = {
     },
     
     renderNewSlideToUI: function() {
+        var html = [], htmlStr = "";
         
         this.addNewSlideToObject();
         
-        var html = [];
         html.push('<li id="item_' + this.itemIndex +'" class="slideItem ui-state-default">');
         html.push(' <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item_' + this.itemIndex);
         html.push('</li>');
-        var htmlStr = html.join("\n");
+        htmlStr = html.join("\n");
+
         $("#slideContainer ul").append(htmlStr);
         
     },
     
     addNewSlideToObject: function() {
         var item = {};
-        this.itemIndex = this.jsonObj.length + 1;
+
+        this.counter = this.counter + 1;
+        this.itemIndex = this.counter;
         item.slideId = this.itemIndex;
         item.orderId = this.itemIndex;
         item.slideName = "item_" + this.itemIndex;
-        this.jsonObj.push(item);  
+        
+        this.jsonObj[item.slideName] = item;  
         console.log(JSON.stringify(this.jsonObj));
     },
     
-    sortList: function() {
-        $("#slideContainer ul li").each(function() {
-            console.log($(this).attr("id"));
+    doOrderList: function() {
+        var jsonObj = this.jsonObj
+
+        $("#slideContainer ul li").each(function(i) {            
             var name = $(this).attr("id");
-            // TODO : ADD LOOP FOR SORT.
-            // this.jsonObj.each(function () {
-                // console.log("1-> ", name);
-                // console.log("2-> ", this);
-                // // if (this.== name) {
-// //                         
-                // // }
-             // });     
+            jsonObj[name].orderId = i+1; 
         })
         
-
+        this.jsonObj = jsonObj;
+        console.log("orderd List--> ", this.jsonObj);
+    },
+    
+    sortList: function() {
+        
+        /* TODO: Convert this code into my objects...
+         * 
+         */
+        var maxSpeed = {car:300, bike:60, motorbike:200, airplane:1000,
+                    helicopter:400, rocket:8*60*60}
+                var sortable = [];
+                for (var vehicle in maxSpeed)
+                      sortable.push([vehicle, maxSpeed[vehicle]])
+                sortable.sort(function(a, b) {return a[1] - b[1]})*/
+          
     },
     
     renderJson: function() {
@@ -88,8 +102,8 @@ ewActivityManager.views.slideManager = {
 $(document).ready(function() {
     $( "#sortable" ).sortable({
         placeholder: "slideContainer",
-        out: function(event, ui) { 
-            ewActivityManager.slideManager.sortList();        
+        stop: function(event, ui) { 
+            ewActivityManager.slideManager.doOrderList();        
         }
     });
     
