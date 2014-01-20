@@ -5,7 +5,6 @@
 		   <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
 		   <script type="text/javascript" src="js/plugin/jquery-ui-1.9.2.custom.min.js"></script>
 		   <script type="text/javascript" src="js/default.js"></script>
-		   <script type="text/javascript" src="js/bootstrap.js"></script>
 </head>
     <body>
 		<!--START HEADER-->
@@ -17,19 +16,14 @@
 		<!--START CATEGORY LIST-->
 		<div id="categoryListContainer">
 			<ul id="mainList" class="clearAfter">
-				<li subMenuId="base">Base</li>
-				<li subMenuId="canvas">Canvas</li>
-				<li subMenuId="graph">Graph</li>
+				<li>Base</li>
+				<li>Canvas</li>
+				<li>Graph</li>
 			</ul>
-			<ul id="base_category" class="subCategory clearAfter">
+			<ul id="base_category">
 				<li>image</li>
 				<li>simple text</li>
 			</ul>
-			<ul id="canvas_category" class="subCategory clearAfter">
-                <li>Trio</li>
-                <li>circle</li>
-				<li>ellipse</li>
-            </ul>
 			
 		</div>
 		<!--END CATEGORY LIST-->
@@ -45,8 +39,6 @@
 			</div>
 		</div>
 		<!--END BODY-->
-		<input type="button" value="Render Json" onclick="ewActivityManager.slideManager.renderJson()" />
-		<div id="jsonStr"></div>
     </body>
 	<link rel="stylesheet" type="text/css" href="css/plugin/jquery-ui/jquery-ui-1.9.2.custom.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/default.css" />
